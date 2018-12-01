@@ -1,0 +1,56 @@
+<button type="button" (click)="editStudentProfile()" class="btn btn-primary">Edit Profile</button>
+<button type="button" (click)="appliedVacancies()" class="btn btn-primary">Applied Vacancies</button>
+<div class="jumbotron">
+    <h1 class="text-primary" style="display: inline-block">{{auth.studentData.name}}</h1>
+    <img width="150px" height="150px" style="float:right" src={{auth.studentData.imageUrl}} alt={{auth.studentData.imageUrl}}><br>
+    <p class="text-muted">{{auth.studentData.fName}}</p>
+    <p  class="text-muted">{{auth.studentData.email}}</p>
+
+    
+      <div class="row" style="margin-top:30px;height: 65px;border-top:1px solid rgb(23, 118, 156)">
+          <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4" style="border-bottom:1px solid rgb(23, 118, 156);text-align: center">
+            <h6 style="" class="text-muted">Skills</h6>
+          </div>
+          <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8" style="border-bottom:1px solid rgb(23, 118, 156);text-align: left">
+            <h6 class="text-primary">{{auth.studentData.skills}}</h6>
+          </div>
+        </div>
+      <div class="row" style="height: 150px">
+        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4" style="border-bottom:1px solid rgb(23, 118, 156);text-align: center">
+            <h6 style="" class="text-muted">University Info.</h6>
+        </div>
+        <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8" style="border-bottom:1px solid rgb(23, 118, 156);text-align: left">
+          <h6 class="text-primary">Name: {{auth.studentData.universityName}}</h6>
+          <h6 class="text-primary">Dept. {{auth.studentData.dept}}</h6>
+          <h6 class="text-primary">Current Gpa: {{auth.studentData.gpa}}</h6>
+          <h6 class="text-primary">Passing Out Year: {{auth.studentData.universityPassingOutYear}}</h6>
+          <h6 class="text-primary">Degree Title: {{auth.studentData.degree}}</h6>
+        </div>
+      </div>
+      <div class="row" style="height: 150px">
+          <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4" style="border-bottom:1px solid rgb(23, 118, 156);text-align: center">
+            <h6 style="" class="text-muted">Intermediate Info.</h6>
+          </div>
+          <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8" style="border-bottom:1px solid rgb(23, 118, 156);text-align: left">
+          <h6 class="text-primary">Name: {{auth.studentData.collegeName}}</h6>
+          <h6 class="text-primary">Board. {{auth.studentData.IntermediateBoard}}</h6>
+          <h6 class="text-primary">Percentage: {{auth.studentData.IntermediatePercentage}}</h6>
+          <h6 class="text-primary">Passing Out Year: {{auth.studentData.InterPassingYear}}</h6>
+          <h6 class="text-primary">Subject: {{auth.studentData.IntermediateSubject}}</h6>
+          </div>
+        </div>
+        <div class="row" style="height: 150px">
+            <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4" style="text-align: center">
+              <h6 style="" class="text-muted">School Info.</h6>
+            </div>
+            <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8" style="text-align: left">
+              <h6 class="text-primary">Name: {{auth.studentData.schoolName}}</h6>
+              <h6 class="text-primary">Board. {{auth.studentData.matriculationBoard}}</h6>
+              <!-- <h6 class="text-primary">Percentage: {{auth.studentData.matriculationPer}}</h6> -->
+              <h6 class="text-primary">Passing Out Year: {{auth.studentData.matriculationPassingYear}}</h6>
+              <h6 class="text-primary">Subject: {{auth.studentData.matricultionSubject}}</h6>
+             
+            </div>
+        </div>
+    
+  </div>

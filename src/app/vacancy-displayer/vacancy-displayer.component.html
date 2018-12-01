@@ -1,0 +1,21 @@
+<ul style="display: inline-block" *ngFor="let v of vL">
+  <li (click)="openModal(vacancyDetailsModal,v)" style="list-style: none;display: inline-block;min-width: 200px;max-width: 200px;cursor: pointer;">
+    <div class="card border-primary mb-3" style="width: 100%">
+      <div class="card-header">{{v.companyName}}</div>
+      <div class="card-body">
+        <h4 class="card-title">{{v.jobTitle}}</h4>
+        <p class="card-text">{{v.salary}}</p>
+        <p class="card-text">{{v.skillsRequired}}</p>
+        <button *ngIf="auth.type.student" type="button" (click)="applyForVacancy(v)" class="btn btn-outline-success">Apply</button>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+
+
+<ng-template #vacancyDetailsModal>
+  <app-vacancy-model [tempVacancyForModal]="tempVacancyForModal"></app-vacancy-model>  
+</ng-template>
+

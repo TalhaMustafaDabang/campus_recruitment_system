@@ -1,0 +1,141 @@
+<div id="mydiv" class="card border-secondary mb-3">
+  <div class="card-header bg-primary" style="text-align: center"><h3>Post A Vacancy</h3></div>
+  <div class="card-body">
+      <form (ngSubmit)="submit(f)" #f="ngForm">
+          <fieldset>
+           
+            <div class="form-group">
+              <label class="text-primary" for="jobTitle">Job Title</label>
+              <input required ngModel pattern="[a-zA-Z0-9 .,()-_]+" #a="ngModel" validate [ngStyle]="{'border-color':a.errors && a.touched ? 'red' : 'lightgray'}" name="jobTitle" type="text" class="form-control" id="jobTitle" placeholder="Enter Job Title">
+           </div>
+
+          <div class="form-group">
+          <label class="text-primary" for="experience">Select Required Experience</label>
+          <select required ngModel name="experience" class="custom-select">
+           <option value="Fresh">Fresh</option>
+           <option value="Fresh To 6 Months">Fresh To 6 Months</option>
+           <option value="Fresh To 1 Year">Fresh To 1 Year</option>
+           <option value="1 Year">1 Year</option>
+           <option value="1 To 2 Years">1 To 2 Years</option>
+           <option value="2+ Years">2+ Years</option>
+          </select>
+        </div>           
+
+        <div class="form-group">
+          <label class="text-primary" for="skillsRequired">Skills Required (Saperate Them With A Comma)</label>
+          <input ngModel name="skillsRequired" pattern="[a-zA-Z0-9()_-. #]+" #b="ngModel" validate [ngStyle]="{'border-color':b.errors && b.touched ? 'red' : 'lightgray'}" type="text" class="form-control" id="skillsRequired" placeholder="Enter Skills Required">
+       </div>
+
+       <div class="form-group">
+        <label class="text-primary" for="salary">Select Salary</label>
+        <select required ngModel name="salary" class="custom-select">
+         <option value="Stipent">Stipend</option>
+         <option value="Less Than 5K">Less Than 5K</option>
+         <option value="5K To 10K">5K To 10K</option>
+         <option value="10K To 15k">10K To 15k</option>
+         <option value="15K To 20K">15K To 20K</option>
+         <option value="20K +">20K +</option>
+         <option value="asPerExperience">asPerExperience</option>
+         <option value="willBeDisclosedInInterview">Will Be Disclosed In Interview</option>
+        </select>
+      </div> 
+      
+      <div class="form-group">
+        <label class="text-primary" for="requiredGpa">Required GPA</label>
+        <select required ngModel name="requiredGpa" class="custom-select">
+         <option value="2.4+">2.4+</option>
+         <option value="2.5+">2.5+</option>
+         <option value="2.6+">2.6+</option>
+         <option value="2.7+">2.7+</option>
+         <option value="2.8+">2.8+</option>
+         <option value="2.9+">2.9+</option>
+         <option value="3.0+">3.0+</option>
+         <option value="3.1+">3.1+</option>
+         <option value="3.2+">3.2+</option>
+         <option value="3.3+">3.3+</option>
+         <option value="3.4+">3.4+</option>
+         <option value="3.5+">3.5+</option>
+         <option value="3.6+">3.6+</option>
+         <option value="3.7+">3.7+</option>
+         <option value="3.8+">3.8+</option>
+         <option value="3.9+">3.9+</option>
+         <option value="4.0+">4.0+</option>
+         <option value="any">Any</option>
+        </select>
+      </div>
+      
+
+      <div class="form-group">
+        <label class="text-primary" for="universityPassingOutYearRequired">Select University Passingout Year</label>
+      <select required ngModel name="universityPassingoutYearRequired" class="custom-select">
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+      </select>
+    </div>
+
+
+    <label class="text-primary" for="genderDiscrimination">Gender Priority</label>
+       <div class="form-group">
+              <div class="custom-control custom-radio" style="display:inline">
+                 <input required ngModel name="genderDiscrimination" type="radio" id="customRadio1" value="maleOnly" class="custom-control-input" checked="">
+                <label class="custom-control-label" for="customRadio1">Male Only</label>
+            </div>
+              
+              <div class="custom-control custom-radio" style="display:inline;">
+                <input required ngModel type="radio" name="genderDiscrimination" id="customRadio3" value="femaleOnly" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">Female Only</label>
+              </div>
+
+              <div class="custom-control custom-radio" style="display:inline;float:right">
+                <input required ngModel type="radio" name="genderDiscrimination" id="customRadio3" value="any" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">Any</label>
+              </div>
+
+        </div>
+
+        <label class="text-primary" for="workingLocation">Candidiate Have To Work From</label>
+        <div class="form-group">
+          <div class="custom-control custom-radio" style="display:inline">
+             <input required ngModel name="workingLocation" type="radio" id="customRadio1" value="remotely" class="custom-control-input" checked="">
+            <label class="custom-control-label" for="customRadio1">Remotely</label>
+        </div>
+          
+
+          <div class="custom-control custom-radio" style="display:inline;float:right">
+            <input ngModel required type="radio" name="workingLocation" id="customRadio3" value="officed" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio3">Office</label>
+          </div>
+        </div>
+
+
+
+            <div class="form-group">
+              <label class="text-primary" for="requiredDegree">Required Degree</label>
+              <input pattern="[a-zA-Z()-_,. ]+" #c="ngModel" validate [ngStyle]="{'border-color':c.errors && c.touched ? 'red' : 'lightgray'}" required ngModel name="requiredDegree" class="form-control" id="requiredDegree" placeholder="Enter City Name">
+            </div>
+
+
+            <div class="form-group">
+              <label class="text-primary" for="extraDetails">Add Extra Details</label>
+              <textarea #d="ngModel" validate [ngStyle]="{'border-color':d.errors && d.touched ? 'red' : 'lightgray'}" ngModel name="extraDetails" class="form-control" id="extraDetails" rows="3">Add Extra Details Here!</textarea>
+            </div>
+
+         
+            <div class="form-group">
+            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+            </div>
+          
+           
+            <button [disabled]="!f.form.valid" type="submit" class="btn btn-primary" style="float:right">Next</button>
+          </fieldset>
+        </form>
+  </div>
+</div>
+
+
+<!-- <app-student-basic-info></app-student-basic-info> -->

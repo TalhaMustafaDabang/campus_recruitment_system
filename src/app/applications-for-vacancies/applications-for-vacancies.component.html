@@ -1,0 +1,38 @@
+<div *ngIf="!showStudents">
+<ul *ngFor="let v of vL">
+  <li (click)="showApplications(v.vacancyId)" style="list-style: none;cursor: pointer;">
+    <div class="card border-primary mb-3" style="width:25%">
+      <div class="card-header">{{v.companyName}}</div>
+      <div class="card-body">
+        <h4 class="card-title">{{v.jobTitle}}</h4>
+        <p class="card-text">{{v.salary}}</p>
+        <p class="card-text">{{v.skillsRequired}}</p>
+        <!-- <button *ngIf="auth.type.student" type="button" (click)="applyForVacancy(v)" class="btn btn-outline-success">Apply</button> -->
+      </div>
+    </div>
+  </li>
+</ul>
+</div>
+
+
+
+
+<div *ngIf="showStudents">
+<ul *ngFor="let s of SAL">
+  <li style="list-style: none;display: inline;cursor: pointer;">
+    <div class="card mb-3" style="text-align: center;border:1px solid rgb(23, 118, 156);min-width: 20%;;max-width: 20%">
+      <h3 (click)="openModal(studentDetailsModal,s)" class="card-header text-primary">{{s.name}}</h3>
+      <div class="card-body" style="border-top:1px solid rgb(23, 118, 156)">
+        <h5 class="card-title  text-muted">{{s.universityName}},&nbsp;{{s.dept}} ({{s.degree}})</h5>
+        <h6 class="card-subtitle text-muted">Passing Out On {{s.universityPassingOutYear}}</h6>
+      </div>
+      <img style="height: 200px; width: 100%; display: block;" src={{s.imageUrl}} alt="Card image">
+      <div class="card-body">
+        <h6 class="card-subtitle text-primary">{{s.skills}}</h6>
+        <!-- <button *ngIf="!auth.type.admin" (click)="delete(s)" type="button" class="btn btn-danger">Delete</button> -->
+      </div>
+    </div>
+  </li>
+</ul>
+
+</div>

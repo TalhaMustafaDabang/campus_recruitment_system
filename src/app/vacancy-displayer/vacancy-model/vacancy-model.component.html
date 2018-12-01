@@ -1,0 +1,26 @@
+<div id="head" class="modal-header bg-primary" style="text-align: center">
+ 
+  <h2 class="" style="color:white;opacity:.9;text-align: center;display: inline-block;">{{tempVacancyForModal.jobTitle}}</h2>
+  <button style="top:0" (click)="closeModal()" type="button" class="close pull-right">x</button> 
+
+ </div>  
+
+
+
+
+<div class="modal-body">
+  
+<img *ngIf="tempVacancyForModal.verified" style="height: 100px;width: 100px;float: right;top: 0pc" src="../../../assets/verified.png" alt="verified">  
+<h6 style="display: inline" class="text-muted">Company Name:&nbsp;</h6><h5 class="text-primary">{{tempVacancyForModal.companyName}}</h5>
+<h6 style="display: inline" class="text-muted">Skills Required:&nbsp;</h6><h5 class="text-primary">{{tempVacancyForModal.skills}}</h5>
+<h6 style="display: inline" class="text-muted">Experience Required:&nbsp;</h6><h5 class="text-primary">{{tempVacancyForModal.experience}}</h5>
+<h6 style="display: inline" class="text-muted">Gpa Required:&nbsp;</h6><h5 class="text-primary">{{tempVacancyForModal.requiredGpa}}</h5>
+<h6 style="display: inline" class="text-muted">Salary:&nbsp;</h6><h5 class="text-primary">{{tempVacancyForModal.salary}}</h5>
+<h6 style="display: inline" class="text-muted">Gender:&nbsp;</h6><h5 class="text-primary">{{tempVacancyForModal.gender}}</h5>
+<h6 style="display: inline" class="text-muted">Degree:&nbsp;</h6><h5 class="text-primary">{{tempVacancyForModal.requiredDegree}}</h5>
+<h6 style="display: inline" class="text-muted">Working Locatiin:&nbsp;</h6><h5 class="text-primary">{{tempVacancyForModal.workingLocation}}</h5>
+<h6 style="display: inline" class="text-muted">University Passing Out Year:&nbsp;</h6><h5 class="text-primary">{{tempVacancyForModal.universityPassingOutYear}}</h5>
+<h6 style="display: inline" class="text-muted">Extra Details:&nbsp;</h6><h5 class="text-primary">{{tempVacancyForModal.extraDetails}}</h5>  
+
+    
+</div>

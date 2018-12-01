@@ -1,0 +1,76 @@
+<div id="mydiv" class="card border-secondary mb-3">
+    <div class="card-header bg-primary" style="text-align: center"><h3>Add Your University Info!</h3></div>
+    <div class="card-body">
+        <form (ngSubmit)="submit(f)" #f="ngForm">
+            <fieldset>
+            
+              <div class="form-group">
+                <label class="text-primary" for="universityName">Select University</label>
+                 <select required ngModel name="universityName" class="custom-select">
+                <!-- <option selected="">Select university Board</option> -->
+                <option value="uok">U.o.K</option>
+                <option value="aghakhan">Agha Khan</option>
+                <option value="ned">NED</option>
+                <option value="habib">Habib</option>
+                <option value="Iqra">Iqra</option>
+              </select>
+            </div>
+
+              <div class="form-group">
+                <label class="text-primary" for="dept">Dept. Name</label>
+                <input required ngModel pattern="[a-zA-Z0-9- _.]+" #a="ngModel" validate [ngStyle]="{'border-color':a.errors && a.touched ? 'red' : 'lightgray'}" name="dept" type="text" class="form-control" id="dept" placeholder="Enter Dept. Name">
+             </div>
+
+             <div class="form-group">
+                <label class="text-primary" for="degree">Select Your Degree Title</label>
+              <select required ngModel name="degree" class="custom-select">
+                <option value="BS">BS</option>
+                <option value="BE">BE</option>
+                <option value="MS">MS</option>
+                <option value="ME">ME</option>
+                <option value="B.Sc">B.Sc</option>
+                <option value="M.Sc">M.Sc</option>
+                <option value="BA">BA</option>
+                <option value="MA">MA</option>
+                <option value="M.Phil"></option>
+                <option value="MCS">MCS</option>
+               
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="text-primary" for="currentGpa">Current GPA</label>
+              <input pattern="[0-9.+]+" required #g="ngModel" validate [ngStyle]="{'border-color':g.errors && g.touched ? 'red' : 'lightgray'}" ngModel name="gpa" type="text" class="form-control" id="gpa" placeholder="Enter Current GPA">
+           </div>
+
+
+             <div class="form-group">
+                <label class="text-primary" for="universityPassingOutYear">Select University Passingout Year</label>
+              <select required ngModel name="universityPassingOutYear" class="custom-select">
+                <!-- <option selected>Select university Passing Year</option> -->
+                <option value="2010">2018</option>
+                <option value="2011">2019</option>
+                <option value="2012">2020</option>
+                <option value="2013">2021</option>
+                <option value="2014">2022</option>
+                <option value="2015">2023</option>
+                <option value="2016">2024</option>
+              </select>
+            </div>
+  
+       
+  
+      
+              <div class="form-group">
+              <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+              </div>
+            
+             
+              <button [disabled]="!f.form.valid" type="submit" class="btn btn-primary" style="float:right">Next</button>
+            </fieldset>
+          </form>
+    </div>
+  </div>
+  
+  
+  

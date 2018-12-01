@@ -1,0 +1,23 @@
+
+
+<ul style="display: inline-block;" *ngFor="let s of sL">
+  <li style="list-style: none;display: inline-block;min-width: 200px;max-width: 200px;cursor: pointer;">
+    <div class="card mb-3" style="text-align: center;border:1px solid rgb(23, 118, 156);min-width: 100%;;max-width: 100%">
+      <h3 (click)="openModal(studentDetailsModal,s)" class="card-header text-primary">{{s.name}}</h3>
+      <div class="card-body" style="border-top:1px solid rgb(23, 118, 156)">
+        <h5 class="card-title  text-muted">{{s.universityName}},&nbsp;{{s.dept}} ({{s.degree}})</h5>
+        <h6 class="card-subtitle text-muted">Passing Out On {{s.universityPassingOutYear}}</h6>
+      </div>
+      <img style="height: 200px; width: 100%; display: block;" src={{s.imageUrl}} alt="Card image">
+      <div class="card-body">
+        <h6 class="card-subtitle text-primary">{{s.skills}}</h6>
+        <button *ngIf="auth.type.admin" (click)="delete(s)" type="button" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+<ng-template #studentDetailsModal>
+  <app-student-profile [tempStudentForModal]="tempStudentForModal"></app-student-profile>  
+</ng-template>

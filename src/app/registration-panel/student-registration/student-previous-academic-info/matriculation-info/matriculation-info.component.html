@@ -1,0 +1,66 @@
+<div id="mydiv" class="card border-secondary mb-3">
+  <div class="card-header bg-primary" style="text-align: center"><h3>Add Your Matriculation  Info!</h3></div>
+  <div class="card-body">
+      <form (ngSubmit)="submit(f)" #f="ngForm">
+          <fieldset>
+          
+            <div class="form-group">
+              <label class="text-primary" for="schoolName">School Name</label>
+              <input pattern="[a-zA-Z0-9- _.]+" #a="ngModel" validate [ngStyle]="{'border-color':a.errors && a.touched ? 'red' : 'lightgray'}" required ngModel name="schoolName" type="text" class="form-control" id="schoolName" placeholder="Enter School Name">
+           </div>
+           <div class="form-group">
+              <label class="text-primary" for="matriculationPassingYear">Select Matriculation Passing Year</label>
+            <select required ngModel name="matriculationPassingYear" class="custom-select">
+              <!-- <option selected>Select Matriculation Passing Year</option> -->
+              <option value="2010">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+              <label class="text-primary" for="matriculationBoard">Select Matriculation Board</label>
+               <select required ngModel name="matriculationBoard" class="custom-select">
+              <!-- <option selected="">Select Matriculation Board</option> -->
+              <option value="karachi">Karachi</option>
+              <option value="aghakhan">Agha Khan</option>
+              <option value="sukkur">Sukkur</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="lahore">Lahore</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+              <label class="text-primary" for="matriculationSubject">Select Matriculation Subject</label>
+           
+            <select required ngModel name="matriculationSubject" class="custom-select">
+              <!-- <option selected="">Select Subject</option> -->
+              <option value="biology">Biology</option>
+              <option value="computer">Computer</option>
+              <option value="commerce">Commerce</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="text-primary" for="percentage">Percentage</label>
+            <input #g="ngModel" validate [ngStyle]="{'border-color':g.errors && g.touched ? 'red' : 'lightgray'}" required ngModel pattern="[0-9.%]+" name="matriculationPercentage" type="text" class="form-control" id="percentage" placeholder="Enter Percentage">
+         </div>
+          
+
+    
+            <div class="form-group">
+            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+            </div>
+          
+           
+            <button [disabled]="!f.form.valid" type="submit" class="btn btn-primary" style="float:right">Next</button>
+          </fieldset>
+        </form>
+  </div>
+</div>
+
+

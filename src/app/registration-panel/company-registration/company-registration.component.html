@@ -1,0 +1,53 @@
+<div id="mydiv" class="card border-secondary mb-3">
+  <div class="card-header bg-primary" style="text-align: center"><h3>Register Yourself!</h3></div>
+  <div class="card-body">
+      <form (ngSubmit)="submit(f)" #f="ngForm">
+          <fieldset>
+           
+            <div class="form-group">
+              <label class="text-primary" for="companyName">Company Name</label>
+              <input required ngModel pattern="[a-zA-Z0-9-_,.@#]+" #a="ngModel" validate [ngStyle]="{'border-color':a.errors && a.touched ? 'red' : 'lightgray'}" name="companyName" type="text" class="form-control" id="companyName" placeholder="Enter Eompany Name">
+           </div>
+            <div class="form-group">
+              <label class="text-primary" for="companyAddress">Company Address</label>
+              <input required ngModel pattern="[a-zA-Z0-9-_,.@#]+" #b="ngModel" validate [ngStyle]="{'border-color':b.errors && b.touched ? 'red' : 'lightgray'}" name="companyAddress" class="form-control" id="companyAddress" placeholder="Enter Company Name">
+            </div>
+
+            
+            <div class="form-group">
+              <div class="custom-control custom-radio" style="display:inline">
+                 <input required ngModel name="companyCountry" type="radio" id="customRadio1" value="pakistan" class="custom-control-input" checked="">
+                <label class="custom-control-label" for="customRadio1">Pakistan</label>
+            </div>
+              
+              <div class="custom-control custom-radio" style="display:inline;float:right">
+                <input required ngModel type="radio" name="companyCountry" id="customRadio3" value="abord" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">Abord</label>
+              </div>
+            </div>
+
+            
+          <div class="form-group">
+            <label class="text-primary" for="companyNumber">Company Number</label>
+            <input required ngModel pattern="[0-9+-_ #]+" #c="ngModel" validate [ngStyle]="{'border-color':c.errors && c.touched ? 'red' : 'lightgray'}" name="companyNumber" class="form-control" id="companyNumber" placeholder="Enter Company Number">
+          </div>
+
+          <div class="form-group">
+            <label class="text-primary" for="companyCity">Company City</label>
+            <input required ngModel pattern="[a-zA-Z0-9-_,.]+" #d="ngModel" validate [ngStyle]="{'border-color':d.errors && d.touched ? 'red' : 'lightgray'}" name="companyCity" class="form-control" id="companyCity" placeholder="Enter Company City">
+          </div>
+       
+         
+            <div class="form-group">
+            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+            </div>
+          
+           
+            <button [disabled]="!f.form.valid" type="submit" class="btn btn-primary" style="float:right">Next</button>
+          </fieldset>
+        </form>
+  </div>
+</div>
+
+
+<!-- <app-student-basic-info></app-student-basic-info> -->

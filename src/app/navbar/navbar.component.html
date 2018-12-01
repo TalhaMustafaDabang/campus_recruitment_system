@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <a class="navbar-brand" routerLink="">Navbar</a>
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="auth.type.company||auth.type.admin" routerLink="students-list">Students List</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="auth.type.company||auth.type.admin" routerLink="vacancy-adder">Add Vacancy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!auth.type.anonymous" style="cursor: pointer;" (click)="gotoMyProfile()">My Profile</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" *ngIf="auth.type.student||auth.type.admin" routerLink="vacancies">Vacancies</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="">About</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav my-2">
+      <li class="nav-item">
+        <h5 class="nav-link" style="cursor: pointer;" *ngIf="auth.type.student">{{auth.studentData.email}}</h5>
+        <h5 class="nav-link" style="cursor: pointer;" *ngIf="auth.type.company">{{auth.companyData.companyEmail}}</h5>
+        <h5 class="nav-link" style="cursor: pointer;" *ngIf="auth.type.admin">Amin Account</h5>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link" *ngIf="!auth.signin" routerLink="signin"><b>Signin</b></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" *ngIf="!auth.signin" routerLink="registration-panel"><b>Register</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="cursor: pointer;" (click)="logout()" *ngIf="auth.signin" ><b>Logout</b></a>
+            </li>
+     </ul>
+  </div>
+</nav>

@@ -1,0 +1,55 @@
+<div id="mydiv" class="card border-secondary mb-3">
+  <div class="card-header bg-primary" style="text-align: center"><h3>Add Your Info!</h3></div>
+  <div class="card-body">
+      <form (ngSubmit)="submit(f)" #f="ngForm">
+          <fieldset>
+           
+            <div class="form-group">
+              <label class="text-primary" for="exampleInputName">Full Name</label>
+              <input required ngModel #a="ngModel" [ngStyle]="{'border-color':a.errors && a.touched ? 'red' : 'lightgray'}" name="name" pattern="[a-zA-Z- ._]+" type="text" class="form-control" id="exampleInputName" placeholder="Enter Full Name">
+           </div>
+           <div class="form-group">
+            <label class="text-primary" for="exampleInputFatherName">Father Name</label>
+            <input required ngModel #g="ngModel" validate [ngStyle]="{'border-color':g.errors && g.touched ? 'red' : 'lightgray'}" name="fName" pattern="[a-zA-Z- ._]+" type="text" class="form-control" id="exampleInputFatherName" placeholder="Enter Father Name">
+           </div>
+        
+            <div class="form-group">
+              <div class="custom-control custom-radio" style="display:inline">
+                 <input required ngModel  name="gender" type="radio" id="customRadio1" value="male" class="custom-control-input" checked="">
+                <label class="custom-control-label" for="customRadio1">Male</label>
+              </div>
+              
+              <div class="custom-control custom-radio" style="display:inline;float:right">
+                <input required ngModel type="radio" name="gender" id="customRadio3" value="female" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">Female</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group mb-3">
+                  
+                <div class="custom-file">
+                  
+                  <input required ngModel name="image" type="file" (change)="handleFiles($event)" class="custom-file-input" id="inputGroupFile02">
+                  <label class="custom-file-label text-primary" for="inputGroupFile02">Upload Your Image</label>
+                  <button type="button" (click)="imageUploader()" class="btn btn-success">Upload</button>
+               
+                </div>
+                <button type="button" (click)="imageUploader()">Upload</button>
+                  
+              
+              </div>
+            </div>
+         
+            <div class="form-group">
+            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+            </div>
+          
+           
+            <button [disabled]="!f.form.valid" type="submit" class="btn btn-primary" style="float:right">Next</button>
+          </fieldset>
+        </form>
+  </div>
+</div>
+
+

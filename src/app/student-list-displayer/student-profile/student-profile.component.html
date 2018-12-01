@@ -1,0 +1,73 @@
+<div id="head" class="modal-header bg-primary" style="text-align: center">
+ 
+  <h2 class="" style="color:white;opacity:.9;margin-left:30%;text-align: center;display: inline-block;">{{tempStudentForModal.name}}</h2>
+  <button style="top:0" (click)="closeModal()" type="button" class="close pull-right">x</button> 
+
+ </div>  
+
+
+
+
+<div class="modal-body">
+  <div class="row">
+  
+  <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4" style="display:inline-block;">
+  <img src={{tempStudentForModal.imageUrl}} alt={{tempStudentForModal.imageUrl}} style="border-radius: 50%;max-width: 170px;max-height: 150px">
+  </div>
+  <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8" style="padding-top: 25px;display: inline-block; text-align: left;max-width: 70%;">
+          <h5 style="display: inline;" class="text-primary">Father Name: &nbsp; {{tempStudentForModal.fname}}</h5>
+          <h5 style="display: inline;" class="text-primary">{{tempStudentForModal.email}}</h5>
+          <h5 style="display: inline;" class="text-primary">{{tempStudentForModal.number}}</h5>
+          <h5 style="display: inline;" class="text-primary">{{tempStudentForModal.city}}</h5>
+  </div>
+</div>
+<div class="row" style="margin-top:30px;height: 65px;border-top:1px solid rgb(23, 118, 156)">
+    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4" style="border-bottom:1px solid rgb(23, 118, 156);text-align: center">
+      <h6 style="" class="text-muted">Skills</h6>
+    </div>
+    <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8" style="border-bottom:1px solid rgb(23, 118, 156);text-align: left">
+      <h6 class="text-primary">{{tempStudentForModal.skills}}</h6>
+    </div>
+  </div>
+<div class="row" style="height: 150px">
+  <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4" style="border-bottom:1px solid rgb(23, 118, 156);text-align: center">
+      <h6 style="" class="text-muted">University Info.</h6>
+  </div>
+  <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8" style="border-bottom:1px solid rgb(23, 118, 156);text-align: left">
+    <h6 class="text-primary">Name: {{tempStudentForModal.universityName}}</h6>
+    <h6 class="text-primary">Dept. {{tempStudentForModal.dept}}</h6>
+    <h6 class="text-primary">Current Gpa: {{tempStudentForModal.gpa}}</h6>
+    <h6 class="text-primary">Passing Out Year: {{tempStudentForModal.universityPassingOutYear}}</h6>
+    <h6 class="text-primary">Degree Title: {{tempStudentForModal.degree}}</h6>
+  </div>
+</div>
+<div class="row" style="height: 150px">
+    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4" style="border-bottom:1px solid rgb(23, 118, 156);text-align: center">
+      <h6 style="" class="text-muted">Intermediate Info.</h6>
+    </div>
+    <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8" style="border-bottom:1px solid rgb(23, 118, 156);text-align: left">
+    <h6 class="text-primary">Name: {{tempStudentForModal.collegeName}}</h6>
+    <h6 class="text-primary">Board. {{tempStudentForModal.IntermediateBoard}}</h6>
+    <h6 class="text-primary">Percentage: {{tempStudentForModal.IntermediatePercentage}}</h6>
+    <h6 class="text-primary">Passing Out Year: {{tempStudentForModal.InterPassingYear}}</h6>
+    <h6 class="text-primary">Subject: {{tempStudentForModal.IntermediateSubject}}</h6>
+    </div>
+  </div>
+  <div class="row" style="height: 150px">
+      <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4" style="text-align: center">
+        <h6 style="" class="text-muted">School Info.</h6>
+      </div>
+      <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8" style="text-align: left">
+        <h6 class="text-primary">Name: {{tempStudentForModal.schoolName}}</h6>
+        <h6 class="text-primary">Board. {{tempStudentForModal.matriculationBoard}}</h6>
+        <!-- <h6 class="text-primary">Percentage: {{tempStudentForModal.matriculationPer}}</h6> -->
+        <h6 class="text-primary">Passing Out Year: {{tempStudentForModal.matriculationPassingYear}}</h6>
+        <h6 class="text-primary">Subject: {{tempStudentForModal.matricultionSubject}}</h6>
+       
+      </div>
+  </div>
+  
+
+    
+    
+</div>
